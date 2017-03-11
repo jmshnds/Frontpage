@@ -3,39 +3,186 @@
 <head>
 	<title>Start</title>
 	<link rel="stylesheet" type="text/css" href="site.css">
+	
+	<!-- Google fonts-->
+	<link href="https://fonts.googleapis.com/css?family=Lato:300|Roboto+Mono:400,500" rel="stylesheet">
+	
 </head>
 <body>
-	<div id="Weather">
-		<h1>Weather</h1>
-	</div>
-	
-	<div id="Search">
-		<h1>Search</h1>
-	</div>
-	
-	<div id="Links" class="centered">
-		<ul>
-			<li>Category 1</li>
-			<li><a href="#">link a</a></li>
-			<li><a href="#">link a</a></li>
-			<li><a href="#">link a</a></li>
-		</ul>
-		
-		<ul>
-			<li>Category 2</li>
-			<li><a href="#">link a</a></li>
-			<li><a href="#">link a</a></li>
-			<li><a href="#">link a</a></li>
-		</ul>
-		
-		<ul>
-			<li>Category 3</li>
-			<li><a href="#">link a</a></li>
-			<li><a href="#">link a</a></li>
-			<li><a href="#">link a</a></li>
-		</ul>
 
-	</div>
+	<div class="content">
+		<div id="Time" class="centered">
+			<time id="currentTime"></time>
+			<span id="currentDate"></span>
+		</div> <!-- Time -->
+		
+		<div id="Links" class="centered">
+		
+			<div>
+				<h2 id="title1">Social</h2>
+				<ul>
+					<li><a href="#">reddit</a></li>
+					<li><a href="#">twitter</a></li>
+					<li><a href="#">discord</a></li>
+					<li><a href="#">slack</a></li>
+				</ul>
+			</div>
+			
+			<div>
+				<h2 id="title2">CS</h2>
+				<ul>
+					<li><a href="#">SFSU</a></li>
+					<li><a href="#">link b</a></li>
+					<li><a href="#">github</a></li>
+
+				</ul>
+			</div>
+			
+			<div>
+				<h2 id="title3">Learning</h2>
+				<ul>
+					<li><a href="https://www.duolingo.com">duolingo</a></li>
+					<li><a href="https://www.codecademy.com">codecademy</a></li>
+					<li><a href="https://www.khanacademy.org">khan academy</a></li>
+				</ul>
+			</div>
+			
+			<div>
+				<h2 id="title4">Entertainment</h2>
+				<ul>
+					<li><a href="https://www.youtube.com">youtube</a></li>
+					<li><a href="https://www.netflix.com">netflix</a></li>
+					<li><a href="#">link a</a></li>
+				</ul>
+			</div>
+			
+			<div>
+				<h2 id="title5">Other</h2>
+				<ul>
+					<li><a href="#">gmail</a></li>
+					<li><a href="#">proton mail</a></li>
+					<li><a href="#">link a</a></li>
+				</ul>
+			</div>
+		</div> <!-- Links -->
+		
+	</div> <!-- end content -->
 	
+	<script>
+        function setTime() {
+			var dateTime = new Date();
+			
+			var theTime = "";
+			
+			var hours = dateTime.getHours();
+			var ampm = "AM";
+			if(hours > 12) {
+				hours -= 12;
+				ampm = "PM";
+			}
+			theTime += hours + ":";
+			
+			var mins = dateTime.getMinutes();
+			if(mins < 10) {
+				theTime += "0" + mins;
+			}
+			else {
+				theTime += mins;
+			}
+
+			theTime += " " + ampm;
+				
+			var theDate = "";
+			// day of the week
+			switch(dateTime.getDay()) {
+				case 0:
+					theDate += "Sunday";
+					break;
+				case 1:
+					theDate += "Monday";
+					break;
+				case 2:
+					theDate += "Tueday";
+					break;
+				case 3:
+					theDate += "Wednesday";
+					break;
+				case 4:
+					theDate += "Thursday";
+					break;
+				case 5:
+					theDate += "Friday";
+					break;
+				case 6:
+					theDate += "Saturday";
+					break;
+				default:
+					theDate += "Invalid Day";
+			}
+			theDate += ", ";
+			
+			// month
+			switch(dateTime.getMonth()) {
+				case 0:
+					theDate += "January";
+					break;
+				case 1:
+					theDate += "February";
+					break;
+				case 2:
+					theDate += "March";
+					break;
+				case 3:
+					theDate += "April";
+					break;
+				case 4:
+					theDate += "May";
+					break;
+				case 5:
+					theDate += "June";
+					break;
+				case 6:
+					theDate += "July";
+					break;
+				case 7:
+					theDate += "August";
+					break;
+				case 8:
+					theDate += "September";
+					break;
+				case 9:
+					theDate += "October";
+					break;
+				case 10:
+					theDate += "November";
+					break;
+				case 11:
+					theDate += "December";
+					break;
+				default:
+					theDate += "Invalid Month";
+			}
+			theDate += " " + dateTime.getDate();
+			switch(dateTime.getDate()) {
+				case 1: case 21: case 31:
+					theDate += "st";
+					break;
+				case 2: case 22:
+					theDate += "nd";
+					break;
+				case 3: case 23:
+					theDate += "rd";
+					break;
+				default:
+					theDate += "th";
+			}
+			
+            document.getElementById("currentTime").innerHTML = theTime;
+			document.getElementById("currentDate").innerHTML = theDate;
+        }
+		setTime(); // initial call to setTime
+
+        setInterval(setTime, 3000); // setTime every 3 seconds
+	</script>	
 </body>
 </html>

@@ -1,26 +1,88 @@
 
+body {
+	background-color: #022B36;
+	color: #EEE8D5;
+}
+
 .centered {
 	text-align: center;
 }
 
-/* Weather */
-#Weather {
-	background: blue;
-	display: flex;
+.content {
+    margin: 0 auto;
 }
 
-/* Search */
-#Search {
-	background: red;
-	display: flex;
+/* Time */
+#Time {
+	display: block;
+	margin-top: 50px;
+	margin-bottom: 50px;
 }
+
+time {
+    display: block;
+    font-family: 'Lato', sans-serif;
+    font-size: 4.3em;
+    font-weight: 300;
+}
+
+#currentDate {
+    display: block;
+    font-family: 'Lato', sans-serif;
+    font-size: 1.6em;
+    font-weight: 300;
+}
+/* end Time */
 
 /* Links */
 #Links {
-	background: green;
 	display: flex;
+	font-family: 'Roboto Mono', monospace;
+}
+
+#Links div {
+	width: 19%;
+	margin: 0 auto;
+}
+
+#Links h2 {	
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+#title1 {
+	background-color: #BD4224;
+}
+
+#title2 {
+	background-color: #D1001F;
+}
+
+#title3 {
+	background-color: #839A1C;
+}
+
+#title4 {
+	background-color: #2A7FC6;
+}
+
+#title5 {
+	background-color: #F0A202;
 }
 
 #Links ul {
-	width: 33%;
+	list-style-type: none;
+	background-color: #EEE8D5;
+	text-align: left;
+	
+	margin-top: 0;
+	margin-bottom: 0;
 }
+
+#Links a {
+	color: #434C5E;
+	font-weight: 400;
+    text-decoration: none;
+}
+/* end Links */
+
