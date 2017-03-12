@@ -2,6 +2,8 @@
 body {
 	background-color: #022832;
 	color: #EEE8D5;
+	background: url("Images/lake1.png") no-repeat center center fixed;
+	background-size: cover;
 }
 
 .centered {
@@ -100,17 +102,20 @@ time {
 /* Search */
 .searchbox {
     width: 50%;
-    padding: 15px;
-    background-color: #193e48;
+    padding: 18px 20px 18px 20px;
+    background-color: #062d37;
     color: #EEE8D5;
     border: none;
     font-family: 'Share Tech Mono', monospace;
 	font-size: 1.05em;
     transition: 0.7s;
 	border-radius: 20px;
+	opacity: 0.8;
+	box-shadow: 1px 1px 10px #011419;
 }
 
 .searchbox:focus {
-    background-color: #30515a;
+    background-color: #07323c;
+	opacity: 0.9;
 }
 /* end Search */

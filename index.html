@@ -8,7 +8,7 @@
 	<link href="https://fonts.googleapis.com/css?family=Lato:300|Share+Tech+Mono:400,500|Roboto+Mono:500" rel="stylesheet">
 	
 </head>
-<body>
+<body id="theBody">
 
 	<div class="content">
 	
@@ -55,7 +55,7 @@
 				<ul>
 					<li><a href="https://www.youtube.com">youtube</a></li>
 					<li><a href="https://www.netflix.com">netflix</a></li>
-					<li><a href="#">fillerLink</a></li>
+					<li><a href="https://www.pandora.com/">pandora</a></li>
 				</ul>
 			</div>
 			
@@ -64,7 +64,7 @@
 				<ul>
 					<li><a href="https://mail.google.com/mail/">gmail</a></li>
 					<li><a href="https://protonmail.com/">proton mail</a></li>
-					<li><a href="#">fillerLink</a></li>
+					<li><a href="https://www.amazon.com/">amazon</a></li>
 				</ul>
 			</div>
 		</div> <!-- end Links -->
@@ -82,16 +82,21 @@
 	<script>
         function setTime() {
 			var dateTime = new Date();
-			
 			var theTime = ""; // variable to update the displayed time
 			
-			var hours = dateTime.getHours();
+			hours = dateTime.getHours();
 			var ampm = "AM";
 			if(hours > 12) {
 				hours -= 12;
 				ampm = "PM";
 			}
-			theTime += hours + ":";
+			if (hours == 0) {
+				// To account for 0:00 AM
+				theTime += "12:";
+			}
+			else {
+				theTime += hours + ":";
+			}
 			
 			var mins = dateTime.getMinutes();
 			if(mins < 10) {
@@ -194,8 +199,56 @@
 			document.getElementById("currentDate").innerHTML = theDate;
         }
 		setTime(); // initial call to setTime
-
-        setInterval(setTime, 3000); // setTime every 3 seconds
+        setInterval(setTime, 5000); // setTime every 5 seconds
+		
+		// Change background image based on the time of day
+		function setBackground() {
+			var hours = new Date().getHours();
+			var body = document.getElementsByTagName("body")[0];
+			switch(hours) {
+				case 4: case 5:
+					body.style.backgroundImage = "url('Images/lake1.png')";
+					break;
+				case 6: case 7:
+					body.style.backgroundImage = "url('Images/lake2.png')";
+					break;
+				case 8: case 9:
+					body.style.backgroundImage = "url('Images/lake3.png')";
+					break;
+				case 10: case 11:
+					body.style.backgroundImage = "url('Images/lake4.png')";
+					break;
+				case 12: case 13:
+					body.style.backgroundImage = "url('Images/lake5.png')";
+					break;
+				case 14: case 15:
+					body.style.backgroundImage = "url('Images/lake6.png')";
+					break;
+				case 16: case 17:
+					body.style.backgroundImage = "url('Images/lake7.png')";
+					break;
+				case 18: case 19:
+					body.style.backgroundImage = "url('Images/lake8.png')";
+					break;
+				case 20: case 21:
+					body.style.backgroundImage = "url('Images/lake9.png')";
+					break;
+				case 22: case 23:
+					body.style.backgroundImage = "url('Images/lake10.png')";
+					break;
+				case 0: case 1:
+					body.style.backgroundImage = "url('Images/lake11.png')";
+					break;
+				case 2: case 3:
+					body.style.backgroundImage = "url('Images/lake12.png')";
+					break;
+				default:
+					body.style.backgroundImage = "url('Images/lake1.png')";
+			}
+		}
+		setBackground(); // Initial call to setBackground
+		setInterval(setBackground, 1800000); // check every 30 minutes	
+			
 	</script>	
 </body>
 </html>
