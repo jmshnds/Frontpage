@@ -22,7 +22,7 @@ body {
 time {
     display: block;
     font-family: 'Lato', sans-serif;
-    font-size: 4.3em;
+    font-size: 4.4em;
     font-weight: 300;
 }
 
@@ -37,7 +37,8 @@ time {
 /* Links */
 #Links {
 	display: flex;
-	font-family: 'Roboto Mono', monospace;
+	font-family: 'Share Tech Mono', monospace;
+	margin-bottom: 50px;
 }
 
 #Links div {
@@ -46,6 +47,7 @@ time {
 }
 
 #Links h2 {	
+	font-family: 'Roboto Mono', monospace;
 	margin-top: 0;
 	margin-bottom: 0;
 }
@@ -74,15 +76,39 @@ time {
 	list-style-type: none;
 	background-color: #EEE8D5;
 	text-align: left;
-	
+	font-size: 1.2em;
 	margin-top: 0;
 	margin-bottom: 0;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	box-shadow: 2px 2px 7px #011419;
 }
 
 #Links a {
-	color: #434C5E;
+	color: #022B36;
 	font-weight: 400;
     text-decoration: none;
 }
+
+#Links a:hover {
+	color: #193e48;
+	font-size: 1.05em;
+}
 /* end Links */
 
+/* Search */
+.searchbox {
+    width: 50%;
+    padding: 15px;
+    background-color: #193e48;
+    color: #EEE8D5;
+    border: none;
+    font-family: 'Share Tech Mono', monospace;
+	font-size: 1.05em;
+    transition: 0.7s;
+}
+
+.searchbox:focus {
+    background-color: #30515a;
+}
+/* end Search */

@@ -5,7 +5,7 @@
 	<link rel="stylesheet" type="text/css" href="site.css">
 	
 	<!-- Google fonts-->
-	<link href="https://fonts.googleapis.com/css?family=Lato:300|Roboto+Mono:400,500" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Lato:300|Share+Tech+Mono:400,500|Roboto+Mono:500" rel="stylesheet">
 	
 </head>
 <body>
@@ -21,19 +21,19 @@
 			<div>
 				<h2 id="title1">Social</h2>
 				<ul>
-					<li><a href="#">reddit</a></li>
-					<li><a href="#">twitter</a></li>
-					<li><a href="#">discord</a></li>
-					<li><a href="#">slack</a></li>
+					<li><a href="https://reddit.com">reddit</a></li>
+					<li><a href="https://twitter.com/">twitter</a></li>
+					<li><a href="https://discordapp.com/apps/">discord</a></li>
+					<li><a href="https://slack.com">slack</a></li>
 				</ul>
 			</div>
 			
 			<div>
 				<h2 id="title2">CS</h2>
 				<ul>
-					<li><a href="#">SFSU</a></li>
-					<li><a href="#">link b</a></li>
-					<li><a href="#">github</a></li>
+					<li><a href="http://www.sfsu.edu/">SFSU</a></li>
+					<li><a href="https://github.com/">github</a></li>
+					<li><a href="http://overthewire.org/wargames/">OTW</a></li>
 
 				</ul>
 			</div>
@@ -52,19 +52,26 @@
 				<ul>
 					<li><a href="https://www.youtube.com">youtube</a></li>
 					<li><a href="https://www.netflix.com">netflix</a></li>
-					<li><a href="#">link a</a></li>
+					<li><a href="#">fillerLink</a></li>
 				</ul>
 			</div>
 			
 			<div>
 				<h2 id="title5">Other</h2>
 				<ul>
-					<li><a href="#">gmail</a></li>
-					<li><a href="#">proton mail</a></li>
-					<li><a href="#">link a</a></li>
+					<li><a href="https://mail.google.com/mail/">gmail</a></li>
+					<li><a href="https://protonmail.com/">proton mail</a></li>
+					<li><a href="#">fillerLink</a></li>
 				</ul>
 			</div>
 		</div> <!-- Links -->
+		
+		<div id="Search" class="centered">
+		    <form action="https://www.duckduckgo.com/" method="get">
+				<input id="searchBar" type="search" autocomplete="off" placeholder="search..." name="q" class="searchbox">
+				<input type="submit" value="search" style="display:none;">
+			</form>
+		</div>
 		
 	</div> <!-- end content -->
 	
@@ -72,7 +79,7 @@
         function setTime() {
 			var dateTime = new Date();
 			
-			var theTime = "";
+			var theTime = ""; // variable to update the displayed time
 			
 			var hours = dateTime.getHours();
 			var ampm = "AM";
@@ -162,6 +169,8 @@
 				default:
 					theDate += "Invalid Month";
 			}
+			
+			// day of the month
 			theDate += " " + dateTime.getDate();
 			switch(dateTime.getDate()) {
 				case 1: case 21: case 31:
@@ -183,6 +192,9 @@
 		setTime(); // initial call to setTime
 
         setInterval(setTime, 3000); // setTime every 3 seconds
+		
+		// Searchbar grab focus
+        document.getElementById("searchBar").focus();
 	</script>	
 </body>
 </html>
