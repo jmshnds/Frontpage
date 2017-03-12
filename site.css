@@ -1,6 +1,6 @@
 
 body {
-	background-color: #022B36;
+	background-color: #022832;
 	color: #EEE8D5;
 }
 
@@ -82,10 +82,11 @@ time {
 	padding-top: 5px;
 	padding-bottom: 5px;
 	box-shadow: 2px 2px 7px #011419;
+	border-radius: 0 0 5px 5px;
 }
 
 #Links a {
-	color: #022B36;
+	color: #022832;
 	font-weight: 400;
     text-decoration: none;
 }
@@ -106,6 +107,7 @@ time {
     font-family: 'Share Tech Mono', monospace;
 	font-size: 1.05em;
     transition: 0.7s;
+	border-radius: 20px;
 }
 
 .searchbox:focus {
