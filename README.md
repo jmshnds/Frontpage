@@ -10,4 +10,4 @@ Images from: https://imgur.com/a/xTUEf
 
 Inspired by: https://github.com/NateMS/startpage/tree/aaa89496bce66c9f008d7b759fe0175cd3f66df6
 
-![screenshot](Images/screenshot.png)
+![screenshot](images/screenshot.png)
