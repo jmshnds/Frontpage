@@ -16,11 +16,11 @@ function setTime()
 	if (hours == 0) {
 		theTime += "12:";
 	} else {
-		theTime += hours + ":";
+		theTime += hours.toString() + ":";
 	}
 			
 	var mins = dateTime.getMinutes().toString();
-	if(mins < 10) {
+	if (mins < 10) {
 		theTime += "0" + mins;
 	} else {
 		theTime += mins;
