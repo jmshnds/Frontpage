@@ -17,7 +17,7 @@ function setTime()
 		theTime += hours + ":";
 	}
 			
-	var mins = dateTime.getMinutes();
+	var mins = dateTime.getMinutes().toString();
 	if(mins < 10) {
 		theTime += "0" + mins;
 	} else {
