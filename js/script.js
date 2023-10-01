@@ -5,85 +5,35 @@ function setTime()
 			
 	hours = dateTime.getHours();
 	var ampm = "AM";
-	if(hours > 12) 
-	{
+	if (hours > 12) {
 		hours -= 12;
 		ampm = "PM";
-	}
-	if (hours == 0) 
-	{
+	} else if (hours == 12) {
+		ampm = "PM"
+	} else if (hours == 0) {
 		// To account for 0:00 AM
 		theTime += "12:";
-	}
-	else 
-	{
+	} else {
 		theTime += hours + ":";
 	}
 			
 	var mins = dateTime.getMinutes();
-	if(mins < 10) 
-	{
+	if(mins < 10) {
 		theTime += "0" + mins;
-	}
-	else 
-	{
+	} else {
 		theTime += mins;
 	}
-
 	theTime += " " + ampm;
 				
-	var theDate = "";
-	// day of the week
-	switch(dateTime.getDay()) 
-	{
-		case 0: theDate += "Sunday";
-			break;
-		case 1: theDate += "Monday";
-			break;
-		case 2: theDate += "Tueday";
-			break;
-		case 3: theDate += "Wednesday";
-			break;
-		case 4: theDate += "Thursday";
-			break;
-		case 5: theDate += "Friday";
-			break;
-		case 6: theDate += "Saturday";
-			break;
-		default: theDate += "Invalid Day";
-	}
-	theDate += ", ";
+	daysOfTheWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+	var theDate = daysOfTheWeek[dateTime.getDay()] + ', '
 			
-	// month
-	switch(dateTime.getMonth()) 
-	{
-		case 0: theDate += "January";
-			break;
-		case 1: theDate += "February";
-			break;
-		case 2: theDate += "March";
-			break;
-		case 3: theDate += "April";
-			break;
-		case 4: theDate += "May";
-			break;
-		case 5: theDate += "June";
-			break;
-		case 6: theDate += "July";
-			break;
-		case 7: theDate += "August";
-			break;
-		case 8: theDate += "September";
-			break;
-		case 9: theDate += "October";
-			break;
-		case 10: theDate += "November";
-			break;
-		case 11: theDate += "December";
-			break;
-		default: theDate += "Invalid Month";
-	}
-			
+	monthsOfTheYear = [
+		"January", "February", "March", "April", "May", "June",
+		"July", "August", "September", "October", "November", "December"
+	]
+	theDate += monthsOfTheYear[dateTime.getMonth()]
+
 	// day of the month
 	theDate += " " + dateTime.getDate();
 	switch(dateTime.getDate()) 
