@@ -10,8 +10,10 @@ function setTime()
 		ampm = "PM";
 	} else if (hours == 12) {
 		ampm = "PM"
-	} else if (hours == 0) {
-		// To account for 0:00 AM
+	}
+	
+	// To account for 0:00 AM
+	if (hours == 0) {
 		theTime += "12:";
 	} else {
 		theTime += hours + ":";
