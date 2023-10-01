@@ -106,53 +106,29 @@ function setTime()
 }
 setTime(); // initial call to setTime
 setInterval(setTime, 5000); // setTime every 5 seconds
-		
+  
 // Change background image based on the time of day
 function setBackground() 
 {
-	var hours = new Date().getHours();
 	var body = document.getElementsByTagName("body")[0];
-	switch(hours) 
-	{
-		case 4: case 5:
-			body.style.backgroundImage = "url('images/lake1.png')";
-			break;
-		case 6: case 7:
-			body.style.backgroundImage = "url('images/lake2.png')";
-			break;
-		case 8: case 9:
-			body.style.backgroundImage = "url('images/lake3.png')";
-			break;
-		case 10: case 11:
-			body.style.backgroundImage = "url('images/lake4.png')";
-			break;
-		case 12: case 13:
-			body.style.backgroundImage = "url('images/lake5.png')";
-			break;
-		case 14: case 15:
-			body.style.backgroundImage = "url('images/lake6.png')";
-			break;
-		case 16: case 17:
-			body.style.backgroundImage = "url('images/lake7.png')";
-			break;
-		case 18: case 19:
-			body.style.backgroundImage = "url('images/lake8.png')";
-			break;
-		case 20: case 21:
-			body.style.backgroundImage = "url('images/lake9.png')";
-			break;
-		case 22: case 23:
-			body.style.backgroundImage = "url('images/lake10.png')";
-			break;
-		case 0: case 1:
-			body.style.backgroundImage = "url('images/lake11.png')";
-			break;
-		case 2: case 3:
-			body.style.backgroundImage = "url('images/lake12.png')";
-			break;
-		default:
-			body.style.backgroundImage = "url('images/lake1.png')";
+	var hours = new Date().getHours();
+
+	// Explicit mapping to find the image based on the current hour
+	var image_mapping = {
+		4: 1, 5: 1,
+		6: 2, 7: 2,
+		8: 3, 9: 3,
+		10: 4, 11: 4,
+		12: 5, 13: 5,
+		14: 6, 15: 6,
+		16: 7, 17: 7,
+		18: 8, 19: 8,
+		20: 9, 21: 9,
+		22: 10, 23: 10,
+		0: 11, 1: 11,
+		2: 12, 3: 12
 	}
+	body.style.backgroundImage = "url('images/lake" + image_mapping[hours.toString()] + ".png')"
 }
 
 setBackground(); // Initial call to setBackground
